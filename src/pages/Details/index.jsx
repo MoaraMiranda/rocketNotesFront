@@ -1,11 +1,13 @@
 import { Container } from "./styles";
 
+import { Header } from "../../components/Header"
 import { Button } from "../../components/Button"
 
 export function Details() {
   return (
-    <Container>     
-      <Button title="Voltar"/>
+    <Container>  
+      <Header/>   
+      <Button title="Voltar" loading/>
     </Container>
   );
 }
