@@ -10,7 +10,6 @@ import { ButtonText } from "../../components/ButtonText";
 export function Home() {
   return (
     <Container>
-    
       <Brand>
         <h1>Rocketnotes</h1>
       </Brand>
@@ -46,7 +45,7 @@ export function Home() {
         </Section>
       </Content>
 
-      <NewNote>
+      <NewNote to="/new">
         <FiPlus />
         Create note
       </NewNote>
