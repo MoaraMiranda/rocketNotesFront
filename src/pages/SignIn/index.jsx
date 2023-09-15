@@ -13,7 +13,7 @@ export function SignIn() {
   const { signIn } = useAuth();
 
   function handleSignIn() {
-    signIn({email, password});
+    signIn({ email, password });
   }
 
   return (
@@ -23,9 +23,19 @@ export function SignIn() {
         <p>Save and manage your favorites links</p>
 
         <h2>Log in now</h2>
-        <Input placeholder="Email" type="text" icon={FiMail} onChange={e => setEmail(e.target.value)}/>
-        <Input placeholder="Password" type="password" icon={FiLock} onChange={e => setPassword(e.target.value)}/>
-        <Button title="Login" onClick = {handleSignIn}/>
+        <Input
+          placeholder="Email"
+          type="text"
+          icon={FiMail}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input
+          placeholder="Password"
+          type="password"
+          icon={FiLock}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Button title="Login" onClick={handleSignIn} />
         <Link to="register">Create your account</Link>
       </Form>
 
