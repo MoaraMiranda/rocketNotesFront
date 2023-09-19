@@ -16,14 +16,22 @@ export function Details() {
   const navigate = useNavigate();
 
   function handleBack() {
-    navigate("/");
+    navigate(-1);
+  }
+
+  async function handleRemove() {
+    const confirm = window.confirm("Would you like to delete this note?");
+
+    if (confirm) {
+      await api.delete(`/notes/${params.id}`);
+      handleBack();
+    }
   }
 
   useEffect(() => {
     async function fetchNote() {
       const response = await api.get(`/notes/${params.id}`);
       setData(response.data);
-      console.log(response.data);
     }
     fetchNote();
   }, []);
@@ -34,7 +42,7 @@ export function Details() {
       {data && (
         <main>
           <Content>
-            <ButtonText title="Remove note" />
+            <ButtonText title="Remove note" onClick={handleRemove} />
             <h1>{data.title}</h1>
             <p>{data.description}</p>
 
